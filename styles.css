@@ -20,6 +20,7 @@ body{
 .searchButtonContainer {
     display: flex;
     gap: 15px;
+    margin-bottom: 20px;
 }
 
 .searchButton {
@@ -49,6 +50,7 @@ body{
     background-color: #f0f0f0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding-left: 15px;
+    font-size: 16px;
 }
 
 .searchInputText:hover {
@@ -58,4 +60,38 @@ body{
 .searchInputText:focus {
     outline: none;
     border: 1px solid #aaa9a9;
+}
+
+.imageContainer{
+    gap: 5px;
+    width: 80%;
+    height: 50%;
+}
+
+.foundImages{
+    margin: 5px;
+    border: 1px solid rgb(177, 177, 177);
+}
+
+.foundImages:hover{
+    border: 1px solid rgb(95, 95, 95);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.219);
+  }
+
+.fakeImages{
+    margin: 5px;
+    border: 1px solid transparent;
+}
+
+.fakeImages:hover{
+    border: 1px solid transparent;
+}
+
+.imageRow {
+    display: flex;
+    justify-content: center;
+}
+
+.imageRow > * {
+    flex: 1;
 }

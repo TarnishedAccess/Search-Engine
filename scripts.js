@@ -17,21 +17,46 @@ async function getImageText(keyword) {
         return await response.json();
 
     } catch (error) {
-        console.error('Error fetching connected drones:', error);
+        console.error('Error fetching images:', error);
         throw error;
     }
 }
 
 function displayImages(data) {
-    images = data.images
+    const images = data.images;
     const imageContainer = document.getElementById('imageContainer');
     imageContainer.innerHTML = '';
-    images.forEach(image => {
-        const img = document.createElement('img');
-        img.src = "images/" + image;
-        imageContainer.appendChild(img);
+  
+    let row = document.createElement('div');
+    row.classList.add('imageRow');
+  
+    images.forEach((image, index) => {
+      const img = document.createElement('img');
+      img.src = "images/" + image;
+      img.classList.add('foundImages');
+      img.style.width = '250px';
+      img.style.height = '250px';
+  
+      row.appendChild(img);
+  
+      if ((index + 1) % 4 === 0 || index === images.length - 1) {
+        if (index === images.length - 1 && images.length % 4 !== 0) {
+          const remaining = 4 - (images.length % 4);
+          for (let i = 0; i < remaining; i++) {
+            const fakeImg = document.createElement('div');
+            fakeImg.style.width = '250px';
+            fakeImg.style.height = '250px';
+            fakeImg.style.background = 'transparent';
+            fakeImg.classList.add('fakeImages');
+            row.appendChild(fakeImg);
+          }
+        }
+        imageContainer.appendChild(row);
+        row = document.createElement('div');
+        row.classList.add('imageRow');
+      }
     });
-}
+  }
 
 searchButtonText.addEventListener('click', () => {
     const keyword = inputField.value;
