@@ -1,0 +1,14 @@
+{
+    "keywords": {
+        "image_0.png": ["sea", "blue", "mountain", "water", "evening", "waves", "sky"],
+        "image_1.jpg": ["tree", "grass", "green", "sky", "fence", "mountain"],
+        "image_2.jpg": ["person", "city", "building", "car", "skyscraper", "road", "society"],
+        "image_3.jpg": ["building", "car", "road", "sky"],
+        "image_4.jpg": ["car", "red", "road", "tree", "mountain", "luxery"],
+        "image_5.jpg": ["tree", "blue", "car", "luxery", "pothole", "corvette"],
+        "image_6.jpg": ["skyscraper", "sea", "society", "city", "boats", "port", "luxery", "tower"],
+        "image_7.jpg": ["water", "bridge", "grass", "sky", "moon", "forest", "lake"],
+        "image_8.jpg": ["tree", "green"],
+        "image_9.png": ["tree", "grass", "green", "forest", "wood", "rocks"]
+    }
+}
