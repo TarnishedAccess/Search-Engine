@@ -1,4 +1,4 @@
-const searchButtonText = document.getElementById('searchButton');
+const searchButtonText = document.getElementById('searchButtonText');
 const inputField = document.getElementById('searchInputText');
 
 async function getImageText(keyword) {

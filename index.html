@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elgoog</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>gniB</title>
 </head>
 <body>
+    <img src="logo.png" class="logoImage">
     <div id="inputContainer" class="inputContainer">
-        <input type="text" placeholder="Input text here" class="searchInputText", id="searchInputText">
-        <button class="searchButton" id="searchButton">Search</button>
+        <input type="text" class="searchInputText", id="searchInputText">
+        <div id="searchButtonContainer" class="searchButtonContainer">
+            <button class="searchButton" id="searchButtonText">Search</button>
+            <button class="searchButton" id="searchButtonPlaceholder1">Placeholder 1</button>
+            <button class="searchButton" id="searchButtonPlaceholder2">Placeholder 2</button>
+        </div>
     </div>
     <div id="imageContainer" class="imageContainer">
         
     </div>
-    <script src="scripts.js"></script>
+    <script src="scripts.js" defer></script>
 </body>
 </html>
