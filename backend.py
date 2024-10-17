@@ -9,7 +9,7 @@ with open('db.json') as f:
 
 def find_images_by_keywords(keywords):
     orSplit = keywords.split('|')
-    andSplit = [element.split() for element in orSplit]
+    andSplit = [element.split(',') for element in orSplit]
     output = []
 
     for orList in andSplit:
