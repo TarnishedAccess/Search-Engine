@@ -7,18 +7,23 @@ import aiohttp_cors
 with open('db.json') as f:
     keyword_database = json.load(f)['keywords']
 
-def find_images_by_keyword(keyword):
+def find_images_by_keywords(keywords):
+    orSplit = keywords.split('|')
+    andSplit = [element.split() for element in orSplit]
     output = []
-    for data in keyword_database:
-        if keyword in keyword_database[data]:
-            output.append(data)
+
+    for orList in andSplit:
+        for data in keyword_database:
+            if all(element in list(keyword_database[data]) for element in orList) and data not in output:
+                output.append(data)
+
     return output
 
 #======API Call Handling=======#
 
-async def get_images_by_keyword(request):
-    keyword = request.query.get('keyword')
-    images = find_images_by_keyword(keyword)
+async def get_images_by_keywords(request):
+    keywords = request.query.get('keywords')
+    images = find_images_by_keywords(keywords)
     return web.json_response({'images': images})
 
 #======Backend Proper=======#
@@ -40,7 +45,7 @@ app = web.Application()
 
 
 #Routes
-app.router.add_get('/images_by_keyword', get_images_by_keyword)
+app.router.add_get('/images_by_keywords', get_images_by_keywords)
 
 setup_cors(app)
 

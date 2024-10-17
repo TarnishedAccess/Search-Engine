@@ -1,9 +1,18 @@
 const searchButtonText = document.getElementById('searchButtonText');
 const inputField = document.getElementById('searchInputText');
 
-async function getImageText(keyword) {
+function treatSearchInput(searchInput) {
+    // Splits the search input by space and +
+    let searchInputSplitOr = searchInput.split('+');
+    searchInputSplitOr = searchInputSplitOr.map((item) => item.trim())
+    let searchInputSplitSpace = searchInputSplitOr.map((item) => item.split(' '));
+    searchInputSplitSpace = searchInputSplitSpace.join('|');
+    return searchInputSplitSpace
+}
+
+async function getImageText(keywords) {
     try {
-        const response = await fetch(`http://127.0.0.1:8080/images_by_keyword?keyword=${keyword}`, {
+        const response = await fetch(`http://127.0.0.1:8080/images_by_keywords?keywords=${keywords}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -60,7 +69,8 @@ function displayImages(data) {
 
 searchButtonText.addEventListener('click', () => {
     const keyword = inputField.value;
-    getImageText(keyword)
+    const result = treatSearchInput(keyword)
+    getImageText(result)
     .then(data => {
         displayImages(data);
     })
