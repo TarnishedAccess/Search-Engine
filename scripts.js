@@ -40,13 +40,21 @@ function displayImages(data) {
     row.classList.add('imageRow');
   
     images.forEach((image, index) => {
+      const img_container = document.createElement('div');
       const img = document.createElement('img');
+      const img_title = document.createElement('p');
+      img_title.textContent = image;
+
+      img_container.appendChild(img);
+      img_container.appendChild(img_title);
+
+      img_container.classList.add('foundImageContainer');
       img.src = "images/" + image;
       img.classList.add('foundImages');
       img.style.width = '250px';
       img.style.height = '250px';
   
-      row.appendChild(img);
+      row.appendChild(img_container);
   
       if ((index + 1) % 4 === 0 || index === images.length - 1) {
         if (index === images.length - 1 && images.length % 4 !== 0) {
