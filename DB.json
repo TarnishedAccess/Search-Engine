@@ -9,6 +9,7 @@
         "image_6.jpg": ["skyscraper", "sea", "society", "city", "boats", "port", "luxery", "tower"],
         "image_7.jpg": ["water", "bridge", "grass", "sky", "moon", "forest", "lake"],
         "image_8.jpg": ["tree", "green"],
-        "image_9.png": ["tree", "grass", "green", "forest", "wood", "rocks"]
+        "image_9.png": ["tree", "grass", "green", "forest", "wood", "rocks"],
+		"airpod fish.png": ["sea", "green", "airpod", "fish"]
     }
 }

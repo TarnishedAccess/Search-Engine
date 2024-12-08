@@ -1,2 +1,3 @@
 Autocomplete (kind of done??? backend done, interface needs some work)
 Image renaming/retagging tool
+^add image downloader (pulls random images somehow? is there an API for htat? google? wiki?)

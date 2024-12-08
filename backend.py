@@ -8,6 +8,7 @@ with open('db.json') as f:
     keyword_database = json.load(f)['keywords']
 
 def find_images_by_keywords(keywords):
+    
     orSplit = keywords.split('|')
     andSplit = [element.split(',') for element in orSplit]
     output = []

@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 ideas.txt
 ideas.txt
+/images_test
+/Exo1
