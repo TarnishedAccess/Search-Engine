@@ -14,17 +14,23 @@ def target(keywords, output_file):
     )
 
 def run_crawler(keywords, output_file, timeout):
-    """Runs the crawler with a timeout."""
-    process = multiprocessing.Process(
-        target=target, 
-        args=(keywords, output_file)
-    )
-    process.start()
-    process.join(timeout)
-    if process.is_alive():
-        process.terminate()
-        process.join()
-        print("Terminated the crawler due to timeout.")
+    split_keywords = keywords.split("|")
+
+    processes = []
+    for keyword in split_keywords:
+        process = multiprocessing.Process(
+            target=target, 
+            args=(keyword, output_file)
+        )
+        processes.append(process)
+        process.start()
+
+    for process in processes:
+        process.join(timeout)
+        if process.is_alive():
+            process.terminate()
+            process.join()
+            print(f"Terminated the crawler for keyword due to timeout.")
         
 async def get_images(request):
     keywords = request.query.get("keywords")

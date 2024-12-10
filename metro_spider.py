@@ -6,15 +6,15 @@ import slugify
 import random
 
 dynamic_urls = [
-    "https://unsplash.com/fr/s/photos/{keyword}",
-    "https://en.wikipedia.org/w/index.php?fulltext=1&search={keyword}&ns0=1",
-    "https://www.flickr.com/search/?text={keyword}",
+    #"https://unsplash.com/fr/s/photos/{keyword}",
+    #"https://en.wikipedia.org/w/index.php?fulltext=1&search={keyword}&ns0=1",
+    #"https://www.flickr.com/search/?text={keyword}",
 ]
 
 static_urls = [
-    "https://www.nbcnews.com/",
-    "https://time.com/",
-    "https://www.cbsnews.com/",
+    #"https://www.nbcnews.com/",
+    #"https://time.com/",
+    #"https://www.cbsnews.com/",
 ]
 
 class MetroSpider(scrapy.Spider):
