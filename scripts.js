@@ -12,7 +12,7 @@ function treatSearchInput(searchInput) {
 
 async function getImageText(keywords) {
     try {
-        const response = await fetch(`http://127.0.0.1:8080/images_by_keywords?keywords=${keywords}`, {
+        const response = await fetch(`http://127.0.0.1:8080/get_images?keywords=${keywords}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -34,7 +34,9 @@ async function getImageText(keywords) {
 function displayImages(data) {
     const images = data.images;
     const imageContainer = document.getElementById('imageContainer');
+    console.log('Before clearing:', imageContainer.innerHTML);
     imageContainer.innerHTML = '';
+    console.log('After clearing:', imageContainer.innerHTML);
   
     let row = document.createElement('div');
     row.classList.add('imageRow');
@@ -49,7 +51,7 @@ function displayImages(data) {
       img_container.appendChild(img_title);
 
       img_container.classList.add('foundImageContainer');
-      img.src = "images/" + image;
+      img.src = image;
       img.classList.add('foundImages');
       img.style.width = '250px';
       img.style.height = '250px';
